@@ -1,0 +1,49 @@
+{
+  "name": "plum-regression",
+  "description": "Run visual regression test suites against plum stylesheets.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/plum-css/plum-regression",
+  "author": {
+    "name": "Jason Bellamy",
+    "email": "j@sonbellamy.com",
+    "url": "http://jasonbellamy.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plum-css/plum-regression.git"
+  },
+  "bugs": {
+    "url": "https://github.com/plum-css/plum-regression/issues"
+  },
+  "license": "MIT",
+  "main": "dist/index",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "clean": "rm -rf dist && mkdir dist",
+    "build-dist": "babel -d dist src",
+    "build": "npm run clean && npm run build-dist",
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "babel": "^5.2.15",
+    "casperjs": "^1.1.0-beta3",
+    "mocha": "*",
+    "phantomcss": "^0.10.0",
+    "should": "3.1.2"
+  },
+  "keywords": [
+    "plum",
+    "regression",
+    "test",
+    "casperjs",
+    "phantomcss"
+  ],
+  "dependencies": {
+    "bluebird": "^2.9.24",
+    "casperjs": "^1.1.0-beta3",
+    "core-js": "^0.9.6",
+    "phantomcss": "^0.10.0"
+  }
+}
