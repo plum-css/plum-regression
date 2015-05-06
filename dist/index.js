@@ -31,7 +31,9 @@ var _child_process = require('child_process');
 var runner = function runner(_ref, cb) {
   var files = _ref.files;
 
-  var command = 'casperjs test ' + files + ' --verbose --pre=' + __dirname + '/pre.js --includes=' + __dirname + '/includes.js --post=' + __dirname + '/post.js';
+  var tests = files.join(' ');
+  var command = 'casperjs test ' + tests + ' --verbose --pre=' + __dirname + '/pre.js --includes=' + __dirname + '/includes.js --post=' + __dirname + '/post.js';
+
   _child_process.exec(command, function (err, stdout) {
     if (err) return cb(err);
     cb(null, stdout);
