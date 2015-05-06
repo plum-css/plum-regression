@@ -2,6 +2,12 @@
 
 > Run visual regression test suites against plum stylesheets.
 
+
+## Features
+
+[plum-regression](https://github.com/plum-css/plum-regression) uses [CasperJS](http://casperjs.org/) & [PhantomCSS](https://github.com/Huddle/PhantomCSS) to automate the process of visual regression testing plum stylesheets.
+
+
 ## Getting Started
 
 - Install with [NPM](https://www.npmjs.org/) - `npm install --save plum-regression`
@@ -31,7 +37,7 @@ regression(options, function(err, response) {
 
 Name                | Type     | Argument     | Description
 --------------------|----------|--------------|------------
-options.files       | `array`  | `<required>` | files and/or directories of stylesheets to parse.
+options.files       | `array`  | `<required>` | files and/or directories containing the tests to run.
 
 #### callback( error, response )
 
@@ -43,7 +49,7 @@ response | `string`   | `<required>` | success message.
 
 ## Developing
 
-plum-regression is built using **ES6** and compiled using [Babel](http://babeljs.io/). Run the following task to compile the `src/` into `dist/`.
+[plum-regression](https://github.com/plum-css/plum-regression) is built using **ES6** and compiled using [Babel](http://babeljs.io/). Run the following task to compile the `src/` into `dist/`.
 
 ```bash
 npm run build
