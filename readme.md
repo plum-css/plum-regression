@@ -49,7 +49,7 @@ response | `string`   | `<required>` | success message.
 
 ## Developing
 
-[plum-regression](https://github.com/plum-css/plum-regression) is built using **ES6** and compiled using [Babel](http://babeljs.io/). Run the following task to compile the `src/` into `dist/`.
+[plum-regression](https://github.com/plum-css/plum-regression) is built using **ES6**. Run the following task to compile the `src/` into `dist/`.
 
 ```bash
 npm run build
