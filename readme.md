@@ -61,5 +61,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 
 ## License
-Copyright (c) 2015 [Jason Bellamy ](http://jasonbellamy.com)
-Licensed under the MIT license.ggw
+Copyright (c) 2015 [Jason Bellamy ](http://jasonbellamy.com)  
+Licensed under the MIT license.

@@ -24,13 +24,12 @@
     "clean": "rm -rf dist && mkdir dist",
     "build-dist": "babel -d dist src",
     "build": "npm run clean && npm run build-dist",
-    "test": "mocha"
+    "test": "mocha --compilers js:babel/register"
   },
   "devDependencies": {
     "babel": "^5.2.15",
-    "casperjs": "^1.1.0-beta3",
+    "core-js": "^0.9.6",
     "mocha": "*",
-    "phantomcss": "^0.10.0",
     "should": "3.1.2"
   },
   "keywords": [
@@ -41,9 +40,8 @@
     "phantomcss"
   ],
   "dependencies": {
-    "bluebird": "^2.9.24",
+    "casper": "^0.1.1",
     "casperjs": "^1.1.0-beta3",
-    "core-js": "^0.9.6",
     "phantomcss": "^0.10.0"
   }
 }
