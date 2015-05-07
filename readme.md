@@ -1,11 +1,6 @@
 # plum-regression [![Build Status](https://travis-ci.org/plum-css/plum-regression.png?branch=master)](https://travis-ci.org/plum-css/plum-regression)
 
-> Run visual regression test suites against plum stylesheets.
-
-
-## Features
-
-[plum-regression](https://github.com/plum-css/plum-regression) uses [CasperJS](http://casperjs.org/) & [PhantomCSS](https://github.com/Huddle/PhantomCSS) to automate the process of visual regression testing plum stylesheets.
+> Run visual regression test suites against plum stylesheets using [CasperJS](http://casperjs.org/) & [PhantomCSS](https://github.com/Huddle/PhantomCSS).
 
 
 ## Getting Started
