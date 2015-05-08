@@ -14,8 +14,7 @@ let runner = ({files}, cb) => {
   let tests   = files.join(' ');
   let command = `casperjs test ${tests} --verbose --pre=${__dirname}/pre.js --includes=${__dirname}/includes.js --post=${__dirname}/post.js`;
 
-  exec(command, (err, stdout) => {
-    if (err) return cb(err);
+  exec(command, (err, stdout, stderr) => {
     cb(null, stdout);
   });
 }

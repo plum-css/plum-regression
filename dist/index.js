@@ -34,8 +34,7 @@ var runner = function runner(_ref, cb) {
   var tests = files.join(' ');
   var command = 'casperjs test ' + tests + ' --verbose --pre=' + __dirname + '/pre.js --includes=' + __dirname + '/includes.js --post=' + __dirname + '/post.js';
 
-  _child_process.exec(command, function (err, stdout) {
-    if (err) return cb(err);
+  _child_process.exec(command, function (err, stdout, stderr) {
     cb(null, stdout);
   });
 };
