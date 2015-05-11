@@ -28,12 +28,23 @@ var _casper2 = _interopRequireDefault(_casper);
 
 var _child_process = require('child_process');
 
+/*
+ * Runs CasperJS / PhantomCSS regressions tests.
+ *
+ * @param {object.array}  options.tests - array of files and/or directories where the tests are located.
+ * @param {object.string} options.fixtures - path of the fixtures to use for the tests.
+ * @param {object.string} options.results - path where the results should be stored.
+ * @param {object.string} options.failures - path where the failures should be stored.
+ * @param {function}      callback         - callback method thats executed after the test command has been run.
+ */
 var runner = function runner(_ref, cb) {
-  var files = _ref.files;
-  var destination = _ref.destination;
+  var tests = _ref.tests;
+  var fixtures = _ref.fixtures;
+  var results = _ref.results;
+  var failures = _ref.failures;
 
-  var tests = files.join(' ');
-  var command = 'casperjs test ' + tests + ' --verbose --pre=' + __dirname + '/pre.js --includes=' + __dirname + '/includes.js --post=' + __dirname + '/post.js --destination=' + destination;
+  var files = tests.join(' ');
+  var command = 'casperjs test ' + tests + ' --verbose --pre=' + __dirname + '/pre.js --includes=' + __dirname + '/includes.js --post=' + __dirname + '/post.js --tests=' + files + ' --fixtures=' + fixtures + ' --results=' + results + ' --failures=' + failures;
 
   _child_process.exec(command, function (err, stdout, stderr) {
     cb(null, stdout);

@@ -17,5 +17,5 @@ casper.configure = function configure(path) {
 };
 
 casper.load = function(file) {
-  return casper.start(`${casper.cli.get('destination')}/${file}`);
+  return casper.start(`${casper.cli.get('fixtures')}/${file}`);
 };

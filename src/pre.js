@@ -9,8 +9,8 @@ phantomcss.init({
   rebase: casper.cli.get('rebase'),
   casper: casper,
   libraryRoot: fs.absolute(`${fs.workingDirectory}/node_modules/phantomcss`),
-  comparisonResultRoot: './.tmp/results',
-  failedComparisonsRoot: './.tmp/failures',
+  comparisonResultRoot: casper.cli.get('results'),
+  failedComparisonsRoot: casper.cli.get('failures'),
   fileNameGetter(root, filename) {
     let name = `${root}/${filename.replace(/\W+/g, '-').toLowerCase()}`;
     let base = `${name}.png`;

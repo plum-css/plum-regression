@@ -11,9 +11,18 @@ import casper from 'casper';
 import { exec } from 'child_process';
 
 
-let runner = ({files, destination}, cb) => {
-  let tests   = files.join(' ');
-  let command = `casperjs test ${tests} --verbose --pre=${__dirname}/pre.js --includes=${__dirname}/includes.js --post=${__dirname}/post.js --destination=${destination}`;
+/*
+ * Runs CasperJS / PhantomCSS regressions tests.
+ *
+ * @param {object.array}  options.tests - array of files and/or directories where the tests are located.
+ * @param {object.string} options.fixtures - path of the fixtures to use for the tests.
+ * @param {object.string} options.results - path where the results should be stored.
+ * @param {object.string} options.failures - path where the failures should be stored.
+ * @param {function}      callback         - callback method thats executed after the test command has been run.
+ */
+let runner = ({tests, fixtures, results, failures}, cb) => {
+  let files   = tests.join(' ');
+  let command = `casperjs test ${tests} --verbose --pre=${__dirname}/pre.js --includes=${__dirname}/includes.js --post=${__dirname}/post.js --tests=${files} --fixtures=${fixtures} --results=${results} --failures=${failures}`;
 
   exec(command, (err, stdout, stderr) => {
     cb(null, stdout);
