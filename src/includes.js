@@ -15,3 +15,7 @@ casper.configure = function configure(path) {
 
   return this;
 };
+
+casper.load = function(file) {
+  return casper.start(`${casper.cli.get('destination')}/${file}`);
+};
