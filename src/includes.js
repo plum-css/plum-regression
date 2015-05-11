@@ -10,9 +10,8 @@ import * as phantomcss from 'node_modules/phantomcss/phantomcss.js';
 
 casper.configure = function configure(path) {
   phantomcss.update({
-    screenshotRoot: fs.absolute(`${fs.workingDirectory}/${path}/tests/baselines`),
-    comparisonResultRoot: fs.absolute(`${fs.workingDirectory}/${path}/tests/results`)
-  })
+    screenshotRoot: fs.absolute(`${fs.workingDirectory}/${path}/tests/baselines`)
+  });
 
   return this;
 };

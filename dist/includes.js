@@ -22,8 +22,7 @@ var phantomcss = _interopRequireWildcard(_node_modulesPhantomcssPhantomcssJs);
 
 casper.configure = function configure(path) {
   phantomcss.update({
-    screenshotRoot: _fs2['default'].absolute('' + _fs2['default'].workingDirectory + '/' + path + '/tests/baselines'),
-    comparisonResultRoot: _fs2['default'].absolute('' + _fs2['default'].workingDirectory + '/' + path + '/tests/results')
+    screenshotRoot: _fs2['default'].absolute('' + _fs2['default'].workingDirectory + '/' + path + '/tests/baselines')
   });
 
   return this;
