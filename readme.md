@@ -14,7 +14,10 @@
 var regression = require('plum-regression');
 
 var options = {
-  files: [ 'modules/', 'units/', 'pages/' ]
+  tests: [ 'modules/', 'units/', 'pages/' ],
+  fixtures: 'path/to/fixtures',
+  results: 'path/to/save/results/to',
+  failures: 'path/to/save/failures/to'
 };
 
 regression(options, function(err, response) {
@@ -32,7 +35,10 @@ regression(options, function(err, response) {
 
 Name                | Type     | Argument     | Description
 --------------------|----------|--------------|------------
-options.files       | `array`  | `<required>` | files and/or directories containing the tests to run.
+options.tests       | `array`  | `<required>` | files and/or directories containing the tests to run.
+options.fixtures    | `string` | `<required>` | the path containing the test fixtures to use.
+options.results     | `string` | `<required>` | the path to save the test results to.
+options.failures    | `string` | `<required>` | the path to save the test failures to.
 
 #### callback( error, response )
 
