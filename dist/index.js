@@ -51,7 +51,7 @@ var runner = function runner(_ref, cb) {
 
   var files = tests.join(' ');
   var phantom = _path2['default'].join(__dirname, '..', 'node_modules/phantomcss');
-  var command = 'casperjs test ' + tests + ' --verbose --pre=' + __dirname + '/pre.js --includes=' + __dirname + '/includes.js --post=' + __dirname + '/post.js --stylesheets=' + stylesheets + ' --tests=' + files + ' --fixtures=' + fixtures + ' --results=' + results + ' --failures=' + failures + ' --phantom=' + phantom;
+  var command = 'casperjs test ' + files + ' --verbose --pre=' + __dirname + '/pre.js --includes=' + __dirname + '/includes.js --post=' + __dirname + '/post.js --stylesheets=' + stylesheets + ' --tests=' + files + ' --fixtures=' + fixtures + ' --results=' + results + ' --failures=' + failures + ' --phantom=' + phantom;
 
   _child_process.exec(command, function (err, stdout, stderr) {
     cb(null, stdout);
