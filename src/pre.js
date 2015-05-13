@@ -8,7 +8,7 @@
 phantomcss.init({
   rebase: casper.cli.get('rebase'),
   casper: casper,
-  libraryRoot: fs.absolute(`${fs.workingDirectory}/node_modules/phantomcss`),
+  libraryRoot: casper.cli.get('phantom'),
   comparisonResultRoot: casper.cli.get('results'),
   failedComparisonsRoot: casper.cli.get('failures'),
   fileNameGetter(root, filename) {
