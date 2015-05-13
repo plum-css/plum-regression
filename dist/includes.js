@@ -17,7 +17,7 @@ var phantomcss = require(casper.cli.get('phantom') + '/phantomcss.js');
 
 casper.configure = function configure(path) {
   phantomcss.update({
-    screenshotRoot: '' + casper.cli.get('root') + '/' + path + '/tests/baselines'
+    screenshotRoot: '' + casper.cli.get('stylesheets') + '/' + path + '/tests/baselines'
   });
 
   return this;

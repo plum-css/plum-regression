@@ -14,7 +14,7 @@
 var regression = require('plum-regression');
 
 var options = {
-  root: 'path/to/stylesheets',
+  stylesheets: 'path/to/stylesheets',
   tests: [ 'modules/', 'units/', 'pages/' ],
   fixtures: 'path/to/fixtures',
   results: 'path/to/save/results/to',
@@ -36,7 +36,7 @@ regression(options, function(err, response) {
 
 Name                | Type     | Argument     | Description
 --------------------|----------|--------------|------------
-options.root        | `string` | `<required>` | the path to your plum stylesheets.
+options.stylesheets | `string` | `<required>` | the path to your plum stylesheets.
 options.tests       | `array`  | `<required>` | files and/or directories containing the tests to run.
 options.fixtures    | `string` | `<required>` | the path containing the test fixtures to use.
 options.results     | `string` | `<required>` | the path to save the test results to.

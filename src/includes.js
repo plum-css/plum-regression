@@ -11,7 +11,7 @@ import fs from 'fs';
 
 casper.configure = function configure(path) {
   phantomcss.update({
-    screenshotRoot: `${casper.cli.get('root')}/${path}/tests/baselines`
+    screenshotRoot: `${casper.cli.get('stylesheets')}/${path}/tests/baselines`
   });
 
   return this;
