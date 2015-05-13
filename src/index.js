@@ -25,7 +25,7 @@ import { exec } from 'child_process';
 let runner = ({stylesheets, tests, fixtures, results, failures}, cb) => {
   let files   = tests.join(' ');
   let phantom = path.join(__dirname, '..', 'node_modules/phantomcss');
-  let command = `casperjs test ${tests} --verbose --pre=${__dirname}/pre.js --includes=${__dirname}/includes.js --post=${__dirname}/post.js --stylesheets=${stylesheets} --tests=${files} --fixtures=${fixtures} --results=${results} --failures=${failures} --phantom=${phantom}`;
+  let command = `casperjs test ${files} --verbose --pre=${__dirname}/pre.js --includes=${__dirname}/includes.js --post=${__dirname}/post.js --stylesheets=${stylesheets} --tests=${files} --fixtures=${fixtures} --results=${results} --failures=${failures} --phantom=${phantom}`;
 
   exec(command, (err, stdout, stderr) => {
     cb(null, stdout);
