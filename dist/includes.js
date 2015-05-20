@@ -15,7 +15,7 @@ var _fs2 = _interopRequireDefault(_fs);
  */
 var phantomcss = require(casper.cli.get('phantom') + '/phantomcss.js');
 
-casper.configure = function configure(path) {
+casper.loadPath = function configure(path) {
   phantomcss.update({
     screenshotRoot: '' + casper.cli.get('stylesheets') + '/' + path + '/tests/baselines'
   });
@@ -23,6 +23,6 @@ casper.configure = function configure(path) {
   return this;
 };
 
-casper.load = function (file) {
-  return casper.start('' + casper.cli.get('fixtures') + '/' + file);
+casper.loadFixture = function (file) {
+  return casper.start('' + casper.cli.get('fixtures') + '/' + file + '.html');
 };
