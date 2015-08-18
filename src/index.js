@@ -28,7 +28,10 @@ let runner = ({stylesheets, tests, fixtures, results, failures}, cb) => {
   let command = `casperjs test ${files} --verbose --pre=${__dirname}/pre.js --includes=${__dirname}/includes.js --post=${__dirname}/post.js --stylesheets=${stylesheets} --tests=${files} --fixtures=${fixtures} --results=${results} --failures=${failures} --phantom=${phantom}`;
 
   exec(command, (err, stdout, stderr) => {
-    cb(null, stdout);
+    if (err) {
+      return cb(stdout);
+    }
+    return cb(null, stdout);
   });
 }
 
